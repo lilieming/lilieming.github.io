@@ -31,8 +31,8 @@ float random (vec2 st) {
 }
 
 void main() {
-    vec2 st = gl_FragCoord.xy/resolution.xy;
-    //st.x *= resolution.x/resolution.y;
+    vec2 st = vTexCoord;
+    st.x *= resolution.x/resolution.y;
     st -= .5;
     st /= .5;
     vec3 color = vec3(0.);
@@ -48,6 +48,6 @@ void main() {
     r +=  (.5+.5*cos(a)) / N;    
     r = floor(N*r)/N;
 	color = (1.- r)*vec4(1.,random(vec2(N)),random(vec2(N/2.)),1).rgb;
-    gl_FragColor = vec4(vec3(st.x),1.0);
+    gl_FragColor = vec4(vec3(vTexCoord.x),1.0);
 }
 
