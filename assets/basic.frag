@@ -38,7 +38,7 @@ void main() {
     vec3 color = vec3(0.);
     
     vec2 u = st;
-    float t = u_time,
+    float t = time,
     r = length(u), 
     a = atan(u.y,u.x),
     i = floor(r*N);
