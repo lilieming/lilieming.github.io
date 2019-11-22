@@ -32,7 +32,7 @@ float random (vec2 st) {
 
 void main() {
     vec2 st = gl_FragCoord.xy/resolution.xy;
-    st.x *= resolution.x/resolution.y;
+    //st.x *= resolution.x/resolution.y;
     st -= .5;
     st /= .5;
     vec3 color = vec3(0.);
