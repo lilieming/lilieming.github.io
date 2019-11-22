@@ -8,7 +8,7 @@
 <script>
 var canvas;
 function setup() {
-  canvas = createCanvas(640, 480);
+  canvas = createCanvas($("overlay").width, $("overlay").height);
   // Move the canvas so it’s inside our <div id="sketch-holder">.
   canvas.parent('overlay');
 }
