@@ -47,7 +47,8 @@ void main() {
     a += t+137.5;//*abs(sin(3.1415*abs(sin(2.5*t))))+137.5*i;
     r +=  (.5+.5*cos(a)) / N;    
     r = floor(N*r)/N;
-	color = (1.- r)*vec4(1.,random(vec2(N)),random(vec2(N/2.)),1).rgb*.3;
+    float c = random(vec2(N));
+	color = (1.- r)*vec4(c,c,c,1.).rgb;
     gl_FragColor = vec4(color,1.0);
 }
 
