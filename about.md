@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I am LILIEMING, I LIKE ART , CODE AND  MATH.
 
-### More Information
+### 曾今生活过的城市
 
-A place to include any other types of information that you'd like to include about yourself.
+北京，上海，广州，长沙。现居住于厦门。
 
-### Contact me
+### 个人喜好
+打篮球，看电影，看书，听音乐。
 
-[email@domain.com](mailto:email@domain.com)
+### 联系方式
+
+[email@domain.com](mailto:lilieminglook@gmail.com)
