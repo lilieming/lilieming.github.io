@@ -7,19 +7,35 @@
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
 <script>
 var canvas;
+
+// this variable will hold our shader object
+let theShader;
+var canvasW;
+var canvasH;
+
+function preload(){
+  // load the shader
+  theShader = loadShader('assets/basic.vert', 'assets/basic.frag');
+}
+
 function setup() {
-  canvas = createCanvas($("#overlay").width(), $("#overlay").height());
+  canvasW = $("#overlay").width();
+  canvasH = $("#overlay").height();
+  canvas = createCanvas(canvasW, canvasH, WEBGL);
   // Move the canvas so it’s inside our <div id="sketch-holder">.
   canvas.parent('overlay');
 }
 
 function draw() {
-  if (mouseIsPressed) {
-    fill(0);
-  } else {
-    fill(255);
-  }
-  ellipse(mouseX, mouseY, 80, 80);
+  // shader() sets the active shader with our shader
+  shader(theShader);
+
+  theShader.setUniform('resolution', [canvasW, canvasH]);
+  theShader.setUniform('mouse', map(mouseX, 0, width, 0, 7));
+  theShader.setUniform('time', frameCount * 0.01);
+
+  // rect gives us some geometry on the screen
+  rect(0,0,canvasW, canvasH);
 }
 </script>
 
