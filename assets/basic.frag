@@ -48,6 +48,6 @@ void main() {
     r +=  (.5+.5*cos(a)) / N;    
     r = floor(N*r)/N;
 	color = (1.- r)*vec4(1.,random(vec2(N)),random(vec2(N/2.)),1).rgb;
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(st.x,1.0);
 }
 
