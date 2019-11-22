@@ -1,8 +1,27 @@
 <script src="{{"/assets/vendor/jquery/jquery.min.js" | relative_url }}"></script>
 <script src="{{"/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" | relative_url }}"></script>
 <script src="{{"/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js" | relative_url }}"></script>
-
+<script src="{{"/assets/vendor/p5/p5.min.js" | relative_url }}"></script>
+<script src="{{"/assets/vendor/p5/addons/p5.sound.min.js" | relative_url }}"></script>
+<script src="{{"/assets/vendor/p5/addons/p5.sound.min.js" | relative_url }}"></script>
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
+<script>
+var canvas;
+function setup() {
+  canvas = createCanvas(640, 480);
+  // Move the canvas so it’s inside our <div id="sketch-holder">.
+  canvas.parent('#overlay')
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
+</script>
 
 {% if page.url contains 'contact' %}
   <!-- Form Validation -->
