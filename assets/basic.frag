@@ -1,19 +1,14 @@
-#version 300 es
 // casey conchinha - @kcconch ( https://github.com/kcconch )
 // louise lessel - @louiselessel ( https://github.com/louiselessel )
 // more p5.js + shader examples: https://itp-xstory.github.io/p5js-shaders/
 // this is a modification of a shader by adam ferriss
 // https://github.com/aferriss/p5jsShaderExamples/tree/gh-pages/2_texture-coordinates/2-1_basic
 
-#ifdef GL_ES
-precision highp float;
-precision highp int;
-precision mediump sampler3D;
-#endif
+precision mediump float;
 
 // this is the same variable we declared in the vertex shader
 // we need to declare it here too!
-in vec2 vTexCoord;//uv
+varying vec2 vTexCoord;//uv
 
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
@@ -74,7 +69,7 @@ float NetLayer(vec2 st,float n,float t){
     
     st=fract(st)-.5;
     
-    vec2 p[9];
+    vec2 p[9] = vec2[9](vec2(0.), vec2(0.),vec2(0.),vec2(0.),vec2(0.),vec2(0.),vec2(0.),vec2(0.),vec2(0.));
     int i=0;
     for(float y=-1.;y<=1.;y++){
         for(float x=-1.;x<=1.;x++){
