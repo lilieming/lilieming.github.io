@@ -3,14 +3,11 @@
 // more p5.js + shader examples: https://itp-xstory.github.io/p5js-shaders/
 // this is a modification of a shader by adam ferriss
 // https://github.com/aferriss/p5jsShaderExamples/tree/gh-pages/2_texture-coordinates/2-1_basic
-
 #version 300 es
-#ifdef GL_ES
+
 precision highp float;
 precision highp int;
 precision mediump sampler3D;
-#endif
-
 // this is the same variable we declared in the vertex shader
 // we need to declare it here too!
 varying vec2 vTexCoord;//uv
@@ -39,7 +36,7 @@ vec2 GetPos(vec2 id,vec2 offs,float t){
     float n1=fract(n*10.);
     float n2=fract(n*100.);
     float a=t+n;
-    return offs+vec2(sin(a*n1),cos(a*n2))*.4;ß
+    return offs+vec2(sin(a*n1),cos(a*n2))*.4;
 }
 
 float GetT(vec2 ro,vec2 rd,vec2 p){
