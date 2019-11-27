@@ -6,9 +6,9 @@
 
 #version 300 es
 #ifdef GL_ES
-    precision highp float;
-    precision highp int;
-    precision mediump sampler3D;
+precision highp float;
+precision highp int;
+precision mediump sampler3D;
 #endif
 
 // this is the same variable we declared in the vertex shader
