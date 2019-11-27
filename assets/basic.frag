@@ -69,13 +69,23 @@ float NetLayer(vec2 st,float n,float t){
     
     st=fract(st)-.5;
     
-    vec2 p[9] = vec2[9](vec2(0.), vec2(0.),vec2(0.),vec2(0.),vec2(0.),vec2(0.),vec2(0.),vec2(0.),vec2(0.));
-    int i=0;
-    for(float y=-1.;y<=1.;y++){
-        for(float x=-1.;x<=1.;x++){
-            p[i++]=GetPos(id,vec2(x,y),t);
-        }
-    }
+    vec2 p[9];
+    
+    p[0]=GetPos(id,vec2(0.0,0.0),t);
+    p[1]=GetPos(id,vec2(0.0,1.0),t);
+    p[2]=GetPos(id,vec2(0.0,2.0),t);
+    p[3]=GetPos(id,vec2(1.0,0.0),t);
+    p[4]=GetPos(id,vec2(1.0,1.0),t);
+    p[5]=GetPos(id,vec2(1.0,2.0),t);
+    p[6]=GetPos(id,vec2(2.0,0.0),t);
+    p[7]=GetPos(id,vec2(2.0,1.0),t);
+    p[8]=GetPos(id,vec2(2.0,2.0),t);
+    
+    // for(float y=-1.;y<=1.;y++){
+        //     for(float x=-1.;x<=1.;x++){
+            //         p[i++]=GetPos(id,vec2(x,y),t);
+        //     }
+    // }
     
     float m=0.;
     float sparkle=0.;
