@@ -118,7 +118,7 @@ float NetLayer(vec2 st,float n,float t){
 
 void main()
 {
-    vec2 uv=vTexCoord;
+    vec2 uv=gl_FragCoord.xy/resolution.xy;
 
     uv.x *= resolution.x/resolution.y;
 
