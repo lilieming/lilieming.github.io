@@ -13,7 +13,7 @@ precision mediump sampler3D;
 
 // this is the same variable we declared in the vertex shader
 // we need to declare it here too!
-varying vec2 vTexCoord;//uv
+in vec2 vTexCoord;//uv
 
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
