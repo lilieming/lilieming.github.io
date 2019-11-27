@@ -119,6 +119,9 @@ float NetLayer(vec2 st,float n,float t){
 void main()
 {
     vec2 uv=vTexCoord;
+
+    uv.x *= resolution.x/resolution.y;
+
     uv-=.5;
     
     vec2 M=vec2(.5);
@@ -140,7 +143,7 @@ void main()
         m+=fade*NetLayer(st*size-M*z,i,time);
     }
     
-    float fft=30.;
+    float fft=.3;
     float glow=-uv.y*fft*2.;
     
     vec3 baseCol=vec3(s,cos(t*.4),-sin(t*.24))*.4+.6;
